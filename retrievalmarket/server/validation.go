@@ -164,7 +164,9 @@ func (rv *requestValidator) getPiece(payloadCid cid.Cid, pieceCID *cid.Cid) (pie
 		inPieceCid = *pieceCID
 	}
 
+	log.Warnw("get piece", "payloadCid", payloadCid, "pieceCid", pieceCID)
 	pieces, piecesErr := GetAllPieceInfoForPayload(rv.DagStore, rv.PieceStore, payloadCid)
+	log.Warnw("get piece", "payloadCid", payloadCid, "pieceCid", pieceCID, "pieces", len(pieces), "pieceErr", piecesErr)
 	pieceInfo, isUnsealed := GetBestPieceInfoMatch(rv.ctx, rv.SectorAccessor, pieces, inPieceCid)
 	if pieceInfo.Defined() {
 		return pieceInfo, isUnsealed, nil

@@ -394,16 +394,16 @@ require (
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 )
 
-replace github.com/filecoin-project/filecoin-ffi => ../v1.22.2.6/filecoin-ffi
+replace github.com/filecoin-project/filecoin-ffi => ../filecoin-ffi
 
-replace github.com/elastic/go-sysinfo => ../v1.22.2.6/go-sysinfo
+replace github.com/elastic/go-sysinfo => ../go-sysinfo
 
 replace git.apache.org/thrift.git => github.com/apache/thrift v0.12.0
 
-replace github.com/filecoin-project/go-fil-markets => ../v1.22.2.6/go-fil-markets
+replace github.com/filecoin-project/go-fil-markets => ../go-fil-markets
 
-replace github.com/libp2p/go-libp2p-pubsub v0.8.2 => ../v1.22.2.6/go-libp2p-pubsub
+replace github.com/libp2p/go-libp2p-pubsub v0.8.2 => ../go-libp2p-pubsub
 
-replace github.com/filecoin-project/lotus v1.22.1-boost => ../v1.22.2.6/lotus
+replace github.com/filecoin-project/lotus v1.22.1-boost => ../lotus
 
 replace github.com/lucas-clemente/quic-go v0.31.1 => github.com/lucas-clemente/quic-go v0.29.1

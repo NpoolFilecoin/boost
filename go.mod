@@ -34,7 +34,7 @@ require (
 	github.com/filecoin-project/go-fil-commcid v0.1.0
 	github.com/filecoin-project/go-fil-commp-hashhash v0.1.0
 	github.com/filecoin-project/go-fil-markets v1.26.0
-	github.com/filecoin-project/go-jsonrpc v0.2.3
+	github.com/filecoin-project/go-jsonrpc v0.3.1
 	github.com/filecoin-project/go-legs v0.4.9
 	github.com/filecoin-project/go-padreader v0.0.1
 	github.com/filecoin-project/go-paramfetch v0.0.4
@@ -405,5 +405,7 @@ replace github.com/filecoin-project/go-fil-markets => ../go-fil-markets
 replace github.com/libp2p/go-libp2p-pubsub v0.8.2 => ../go-libp2p-pubsub
 
 replace github.com/filecoin-project/lotus v1.22.1-boost => ../lotus
+
+replace github.com/filecoin-project/lotus => ../lotus
 
 replace github.com/lucas-clemente/quic-go v0.31.1 => github.com/lucas-clemente/quic-go v0.29.1

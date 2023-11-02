@@ -65,6 +65,7 @@ type Config struct {
 	RemoteCommp bool
 	// The number of commp processes that can run in parallel
 	MaxConcurrentLocalCommp uint64
+	SkipCommp               bool
 	TransferLimiter         TransferLimiterConfig
 	// Cleanup deal logs from DB older than this many number of days
 	DealLogDurationDays int

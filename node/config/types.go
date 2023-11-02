@@ -210,6 +210,9 @@ type DealmakingConfig struct {
 	// boost process
 	MaxConcurrentLocalCommp uint64
 
+	// If skip commp check
+	SkipCommp bool
+
 	// The public multi-address for retrieving deals with booster-http.
 	// Note: Must be in multiaddr format, eg /dns/foo.com/tcp/443/https
 	HTTPRetrievalMultiaddr string

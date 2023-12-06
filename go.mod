@@ -171,7 +171,7 @@ require (
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-logr/logr v1.2.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/go-ole/go-ole v1.2.5 // indirect
+	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-openapi/jsonpointer v0.19.5 // indirect
 	github.com/go-openapi/jsonreference v0.19.5 // indirect
 	github.com/go-openapi/spec v0.19.11 // indirect
@@ -281,8 +281,8 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7 // indirect
-	github.com/tklauser/go-sysconf v0.3.5 // indirect
-	github.com/tklauser/numcpus v0.2.2 // indirect
+	github.com/tklauser/go-sysconf v0.3.10 // indirect
+	github.com/tklauser/numcpus v0.4.0 // indirect
 	github.com/twmb/murmur3 v1.1.6 // indirect
 	github.com/ugorji/go/codec v1.2.6 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
@@ -343,9 +343,30 @@ require (
 
 require (
 	github.com/Jorropo/jsync v1.0.1 // indirect
+	github.com/aws/aws-sdk-go-v2 v1.17.4 // indirect
+	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.4.10 // indirect
+	github.com/aws/aws-sdk-go-v2/config v1.18.12 // indirect
+	github.com/aws/aws-sdk-go-v2/credentials v1.13.12 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.12.22 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/s3/manager v1.11.51 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.28 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.4.22 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/ini v1.3.29 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/v4a v1.0.19 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.9.11 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/checksum v1.1.23 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.9.22 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.13.22 // indirect
+	github.com/aws/aws-sdk-go-v2/service/s3 v1.30.2 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sso v1.12.1 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.14.1 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sts v1.18.3 // indirect
+	github.com/aws/smithy-go v1.13.5 // indirect
 	github.com/filecoin-project/kubo-api-client v0.0.2-0.20230829103503-14448166d14d // indirect
 	github.com/gammazero/channelqueue v0.2.1 // indirect
 	github.com/gammazero/deque v0.2.1 // indirect
+	github.com/go-resty/resty/v2 v2.7.0 // indirect
+	github.com/google/fscrypt v0.3.4 // indirect
 	github.com/google/pprof v0.0.0-20230821062121-407c9e7a662f // indirect
 	github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
@@ -362,19 +383,41 @@ require (
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
 	github.com/jackc/pgtype v1.10.0 // indirect
 	github.com/jackc/puddle v1.2.1 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
+	github.com/jmoiron/sqlx v1.3.5 // indirect
 	github.com/lib/pq v1.10.9 // indirect
+	github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0 // indirect
 	github.com/montanaflynn/stats v0.7.0 // indirect
 	github.com/onsi/ginkgo/v2 v2.11.0 // indirect
+	github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c // indirect
 	github.com/puzpuzpuz/xsync/v2 v2.4.0 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
 	github.com/quic-go/qtls-go1-20 v0.3.3 // indirect
 	github.com/quic-go/quic-go v0.38.1 // indirect
 	github.com/quic-go/webtransport-go v0.5.3 // indirect
+	github.com/shirou/gopsutil/v3 v3.22.9 // indirect
 	github.com/warpfork/go-testmark v0.12.1 // indirect
 	github.com/yugabyte/gocql v0.0.0-20230831121436-1e2272bb6bb6 // indirect
 	github.com/yugabyte/pgx/v4 v4.14.5 // indirect
+	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	github.com/zyedidia/generic v1.2.1 // indirect
 	go.opentelemetry.io/otel/metric v1.16.0 // indirect
 	gonum.org/v1/gonum v0.13.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 )
+
+replace github.com/filecoin-project/filecoin-ffi => ../filecoin-ffi
+
+replace github.com/elastic/go-sysinfo => ../go-sysinfo
+
+replace git.apache.org/thrift.git => github.com/apache/thrift v0.12.0
+
+replace github.com/filecoin-project/go-fil-markets => ../go-fil-markets
+
+replace github.com/libp2p/go-libp2p-pubsub v0.8.2 => ../go-libp2p-pubsub
+
+replace github.com/filecoin-project/lotus v1.22.1-boost => ../lotus
+
+replace github.com/filecoin-project/lotus => ../lotus
+
+replace github.com/lucas-clemente/quic-go v0.31.1 => github.com/lucas-clemente/quic-go v0.29.1

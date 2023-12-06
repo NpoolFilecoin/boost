@@ -67,8 +67,11 @@ type Config struct {
 	// The maximum amount of time a transfer can take before it fails
 	MaxTransferDuration time.Duration
 	// Whether to do commp on the Boost node (local) or the sealing node (remote)
-	RemoteCommp     bool
-	TransferLimiter TransferLimiterConfig
+	RemoteCommp bool
+	// The number of commp processes that can run in parallel
+	MaxConcurrentLocalCommp uint64
+	SkipCommp               bool
+	TransferLimiter         TransferLimiterConfig
 	// Cleanup deal logs from DB older than this many number of days
 	DealLogDurationDays int
 	// Cache timeout for Sealing Pipeline status

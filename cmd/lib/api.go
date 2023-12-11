@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"os"
 	"strings"
 	"sync"
 	"time"
@@ -29,7 +30,7 @@ import (
 	"github.com/filecoin-project/lotus/node/repo"
 	"github.com/filecoin-project/lotus/storage/paths"
 	"github.com/filecoin-project/lotus/storage/sealer"
-	"github.com/filecoin-project/lotus/storage/sealer/storiface"
+	// "github.com/filecoin-project/lotus/storage/sealer/storiface"
 	logging "github.com/ipfs/go-log/v2"
 )
 
@@ -193,23 +194,47 @@ func CreateSectorAccessor(ctx context.Context, storageApiInfo string, fullnodeAp
 	}
 	log.Infof("Miner address: %s", maddr)
 
-	// Use an in-memory repo because we don't need any functions
-	// of a real repo, we just need to supply something that satisfies
-	// the LocalStorage interface to the store
-	memRepo := repo.NewMemory(nil)
+	/*
+		// Use an in-memory repo because we don't need any functions
+		// of a real repo, we just need to supply something that satisfies
+		// the LocalStorage interface to the store
+		memRepo := repo.NewMemory(nil)
 
-	// passing FullNode, so that we don't pass StorageMiner or Worker and
-	// skip initializing of sectorstore.json with random local storage ID
-	lr, err := memRepo.Lock(repo.FullNode)
-	if err != nil {
-		return nil, nil, fmt.Errorf("locking mem repo: %w", err)
+		// passing FullNode, so that we don't pass StorageMiner or Worker and
+		// skip initializing of sectorstore.json with random local storage ID
+		lr, err := memRepo.Lock(repo.FullNode)
+		if err != nil {
+			return nil, nil, fmt.Errorf("locking mem repo: %w", err)
+		}
+		defer lr.Close()
+
+		if err := lr.SetStorage(func(sc *storiface.StorageConfig) {
+			sc.StoragePaths = []storiface.LocalPath{}
+		}); err != nil {
+			return nil, nil, fmt.Errorf("set storage config: %w", err)
+		}
+	*/
+
+	boostRepoPath, ok := os.LookupEnv("BOOST_PIECE_REPO")
+	if !ok {
+		return nil, nil, fmt.Errorf("BOOST_PIECE_REPO is not set")
 	}
-	defer lr.Close()
+	r, err := repo.NewFS(boostRepoPath)
+	if err != nil {
+		return nil, nil, err
+	}
 
-	if err := lr.SetStorage(func(sc *storiface.StorageConfig) {
-		sc.StoragePaths = []storiface.LocalPath{}
-	}); err != nil {
-		return nil, nil, fmt.Errorf("set storage config: %w", err)
+	ok, err = r.Exists()
+	if err != nil {
+		return nil, nil, err
+	}
+	if !ok {
+		return nil, nil, fmt.Errorf("%v not exists", boostRepoPath)
+	}
+
+	lr, err := r.Lock(repo.StorageMiner)
+	if err != nil {
+		return nil, nil, err
 	}
 
 	// Create the store interface
